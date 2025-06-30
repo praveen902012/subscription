@@ -134,20 +134,20 @@ export const ContentView: React.FC = () => {
     try {
       const alreadySubscribed = await isSubscribed(email, id);
       if (alreadySubscribed) {
-        setHasAccess(true);
+        setHasAccess(false);
         return;
       }
 
-      const subscription: Subscription = {
-        id: generateId(),
-        email: email,
-        contentId: id,
-        subscribedAt: new Date().toISOString(),
-        youtubeSubscribed: false
-      };
+      // const subscription: Subscription = {
+      //   id: generateId(),
+      //   email: email,
+      //   contentId: id,
+      //   subscribedAt: new Date().toISOString(),
+      //   youtubeSubscribed: false
+      // };
 
-      await saveSubscription(subscription);
-      setHasAccess(true);
+      // await saveSubscription(subscription);
+      // setHasAccess(true);
     } catch (err) {
       setError('Subscription failed. Please try again.');
       console.error('Subscription error:', err);
