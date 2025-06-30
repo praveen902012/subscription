@@ -85,16 +85,16 @@ export const ContentView: React.FC = () => {
 
       if (isSubscribedToChannel) {
         // Create subscription record
-        const subscription: Subscription = {
-          id: generateId(),
-          email: email || authData.userProfile.email,
-          contentId: id,
-          subscribedAt: new Date().toISOString(),
-          youtubeSubscribed: true,
-          googleAccessToken: authData.accessToken
-        };
+        // const subscription: Subscription = {
+        //   id: generateId(),
+        //   email: email || authData.userProfile.email,
+        //   contentId: id,
+        //   subscribedAt: new Date().toISOString(),
+        //   youtubeSubscribed: true,
+        //   googleAccessToken: authData.accessToken
+        // };
 
-        await saveSubscription(subscription);
+        // await saveSubscription(subscription);
         setHasAccess(true);
         setError('');
       } else {
